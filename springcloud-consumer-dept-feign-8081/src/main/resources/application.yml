@@ -1,0 +1,27 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer
+
+feign:
+  hystrix:
+    enabled: true
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+  devtools:
+    livereload:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 2MB
+  application:
+    name: spring-cloud-feign-openClient
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false
